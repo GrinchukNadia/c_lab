@@ -17,9 +17,14 @@ all:  $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-test: $(NAME)
-	cc $(CFLAGS) -I include tests/test_strlen.c tests/test.c $(NAME) -o test
+test_build: $(NAME)
+	cc $(CFLAGS) -I include tests/test_strdup.c tests/test.c $(NAME) -o test
+	
+test: test_build
 	./test
+
+valgrind: test_build
+	valgrind --leak-check=full ./test
 
 clean:
 	rm -f $(OBJS)
@@ -30,4 +35,4 @@ fclean: clean
 re: fclean
 	$(MAKE) all
 
-.PHONY: test clean fclean re
+.PHONY: all test_build test valgrind clean fclean re
