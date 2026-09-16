@@ -2,7 +2,8 @@ NAME = libstrings.a
 
 SRCS = src/ft_strlen.c \
 	   src/ft_isalpha.c \
-	   src/ft_strdup.c
+	   src/ft_strdup.c \
+	   src/ft_strncmp.c
 
 
 OBJS = $(SRCS:.c=.o)
@@ -18,7 +19,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 test_build: $(NAME)
-	cc $(CFLAGS) -I include tests/test_strdup.c tests/test.c $(NAME) -o test
+	cc $(CFLAGS) -I include tests/test_strncmp.c tests/test.c $(NAME) -o test
 	
 test: test_build
 	./test

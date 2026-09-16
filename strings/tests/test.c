@@ -25,10 +25,10 @@ void    check(char *name, int actual, int expected)
 {
     init_tests();
     if (actual == expected)
-        printf("[OK] %s\n", name);
+        printf("\033[32m[OK]\033[0m %s\n", name);
     else
     {
-        printf("[FAIL] %s: expected %d, got %d\n", name, expected, actual);
+        printf("\033[31m[FAIL]\033[0m %s: expected %d, got %d\n", name, expected, actual);
         failed++;
     }
     total++;
@@ -39,7 +39,7 @@ void    check_str(char *name, char *actual, char *expected)
     init_tests();
     if (!actual || !expected)
     {
-        printf("[FAIL] %s: NULL pointer\n", name);
+        printf("\033[31m[FAIL]\033[0m %s: NULL pointer\n", name);
         failed++;
         total++;
         return;
@@ -48,7 +48,7 @@ void    check_str(char *name, char *actual, char *expected)
     {
         if (*actual != *expected)
         {
-            printf("[FAIL] %s: expected %c, got %c\n", name, *expected, *actual);
+            printf("\033[31m[FAIL]\033[0m %s: expected %c, got %c\n", name, *expected, *actual);
             failed++;
             total++;
             return;
@@ -57,10 +57,10 @@ void    check_str(char *name, char *actual, char *expected)
         expected++;
     }
     if (!*actual && !*expected )
-        printf("[OK] %s\n", name);
+        printf("\033[32m[OK]\033[0m %s\n", name);
     else
     {
-        printf("[FAIL] %s: different string lengths\n", name);
+        printf("\033[31m[FAIL]\033[0m %s: different string lengths\n", name);
         failed++;
     }
     total++;
