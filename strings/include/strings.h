@@ -9,5 +9,6 @@ int     ft_strncmp(char *s1, char *s2, size_t n);
 char    *ft_strchr(char *str, int c);
 char    *ft_strrchr(char *str, int c);
 void    *ft_memchr(const void *s, int c, size_t n);
+int     ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

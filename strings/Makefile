@@ -3,7 +3,7 @@ NAME = libstrings.a
 SRCS = src/ft_strlen.c src/ft_isalpha.c \
 	   src/ft_strdup.c src/ft_strncmp.c \
 	   src/ft_strchr.c src/ft_strrchr.c \
-	   src/ft_memchr.c
+	   src/ft_memchr.c src/ft_memcmp.c
 	   
 
 
@@ -20,7 +20,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 test_build: $(NAME)
-	cc $(CFLAGS) -I include tests/test_memchr.c tests/test.c $(NAME) -o test
+	cc $(CFLAGS) -I include tests/test_memcmp.c tests/test.c $(NAME) -o test
 	
 test: test_build
 	./test
