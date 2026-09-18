@@ -1,10 +1,6 @@
 NAME = libstrings.a
 
-SRCS = src/ft_strlen.c src/ft_isalpha.c \
-	   src/ft_strdup.c src/ft_strncmp.c \
-	   src/ft_strchr.c src/ft_strrchr.c \
-	   src/ft_memchr.c src/ft_memcmp.c \
-	   src/ft_memset.c src/ft_bzero.c
+SRCS = $(wildcard src/ft_*.c)
 
 OBJS = $(SRCS:.c=.o)
 
