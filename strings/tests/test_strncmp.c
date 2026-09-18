@@ -14,5 +14,5 @@ int main(void)
     check("s2 longer", ft_strncmp("abc", "abcd", 4) < 0, 1);
     check("n == 0", ft_strncmp("abc", "xbn", 0), 0);
     check("unsigned char", ft_strncmp(s1, "a", 1) > 0, 1);
-    return(0);
+    return (test_result());
 }

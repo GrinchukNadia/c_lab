@@ -10,6 +10,5 @@ int main(void)
     check("one char", ft_strlen("a"), 1);
     check("only spaces", ft_strlen("       "), 7);
     check("special chars", ft_strlen("\n\t"), 2);
-
-    return (0);
+    return (test_result());
 }

@@ -15,5 +15,5 @@ int main(void)
     check("empty not NULL", copy_empty != NULL, 1);
     free(copy);
     free(copy_empty);
-    return (0);
+    return (test_result());
 }

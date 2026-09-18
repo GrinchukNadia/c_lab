@@ -3,6 +3,6 @@
 
 void    check(char *name, int actual, int expected);
 void    check_str(char *name, char *actual, char *expected);
-
+int     test_result(void);
 
 #endif

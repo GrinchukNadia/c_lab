@@ -12,5 +12,5 @@ int main(void)
     check("\\0", ft_strrchr(str, '\0') == str + 4, 1);
     check("letter not in str", ft_strrchr(str, 'x') == NULL, 1);
     check("empty str", ft_strrchr(empty, '\0') == empty, 1);
-    return (0);
+    return (test_result());
 }

@@ -16,5 +16,5 @@ int main(void)
     check("str pos in range", ft_memchr(str, 'l', 5) == str + 2, 1);
     check("str pos not in range", ft_memchr(str, 'o', 2) == NULL, 1);
     check("str find \\0", ft_memchr(str, '\0', 12) == str + 11, 1);
-    return (0);
+    return (test_result());
 }

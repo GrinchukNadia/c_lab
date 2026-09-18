@@ -18,5 +18,5 @@ int main(void)
     check("all 0", c == 4, 1);
     check("after n", data[4] == 5, 1);
     check("last el", data[5] == 6, 1);
-    return (0);
+    return (test_result());
 }

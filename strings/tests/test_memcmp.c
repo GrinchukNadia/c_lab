@@ -19,5 +19,5 @@ int main(void)
     check("data diff before n", ft_memcmp(data_0, data_2, 4) < 0, 1);
     check("data return positive", ft_memcmp(data_3, data_0, 4) > 0, 1);
     check("data n == 0", ft_memcmp( data_0,  data_3, 0), 0);
-    return(0);
+    return (test_result());
 }

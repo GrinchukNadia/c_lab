@@ -18,5 +18,5 @@ int	main(void)
 	check("symbol @", ft_isalpha('@'), 0);
 	check("symbol &", ft_isalpha('&'), 0);
 	check("symbol /", ft_isalpha('/'), 0);
-	return (0);
+	return (test_result());
 }

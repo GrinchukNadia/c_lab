@@ -18,6 +18,5 @@ int main(void)
     ft_memset(data, 456, 2);
     check("first el, c > 255", data[0] == 200, 1);
     check("last el, c > 255", data[1] == 200, 1);
-
-    return (0);
+    return (test_result());
 }
