@@ -9,6 +9,13 @@ CFLAGS = -Wall -Wextra -Werror
 %.o: %.c
 	cc $(CFLAGS) -I include -c $< -o $@
 
+help:
+	@echo "Available targets:"
+	@echo " all"
+	@echo " clean"
+	@echo " fclean"
+	@echo " re"
+
 all:  $(NAME)
 
 $(NAME): $(OBJS)
@@ -23,4 +30,4 @@ fclean: clean
 re: fclean
 	$(MAKE) all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re help
