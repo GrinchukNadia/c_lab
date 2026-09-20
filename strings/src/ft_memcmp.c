@@ -9,7 +9,11 @@
 /*   Updated: 2026/09/17 10:38:42 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Compares the first n bytes of two memory areas.
+ * Returns 0 if equal, a negative value if s1 < s2,
+ * or a positive value if s1 > s2.
+ */
 #include <stddef.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)

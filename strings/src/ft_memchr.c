@@ -9,7 +9,10 @@
 /*   Updated: 2026/09/16 17:39:07 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Searches for byte c in the first n bytes of memory.
+ * Returns a pointer to it, or NULL if it is not found.
+ */
 #include <stddef.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)

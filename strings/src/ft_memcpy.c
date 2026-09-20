@@ -9,7 +9,10 @@
 /*   Updated: 2026/09/19 12:31:34 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Copies n bytes from src to dest.
+ * The memory areas must not overlap.
+ */
 #include <stddef.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)

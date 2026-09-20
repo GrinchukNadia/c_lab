@@ -9,7 +9,10 @@
 /*   Updated: 2026/09/19 15:07:45 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Copies n bytes from src to dest.
+ * Handles overlapping memory areas safely.
+ */
 #include <stddef.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)

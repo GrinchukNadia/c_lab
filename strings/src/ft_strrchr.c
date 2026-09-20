@@ -9,7 +9,10 @@
 /*   Updated: 2026/09/16 15:06:47 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Finds the last occurrence of character c in the string.
+ * Returns a pointer to it, or NULL if it is not found.
+ */
 #include <stddef.h>
 
 char	*ft_strrchr(char *str, int c)

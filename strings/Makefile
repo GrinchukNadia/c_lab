@@ -17,7 +17,7 @@ help:
 	@echo " re"
 
 all:  $(NAME)
-
+ 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 

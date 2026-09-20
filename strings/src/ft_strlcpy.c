@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngrinchu <ngrinchu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/12 12:19:07 by ngrinchu          #+#    #+#             */
-/*   Updated: 2026/09/12 12:19:10 by ngrinchu         ###   ########.fr       */
+/*   Created: 2026/09/20 14:06:33 by ngrinchu          #+#    #+#             */
+/*   Updated: 2026/09/20 14:06:37 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
- * Returns the length of the string, excluding the terminating '\0'.
- */
-int	ft_strlen(char *str)
-{
-	int	c;
 
-	c = 0;
-	while (*str)
+#include <stddef.h>
+#include "strings.h"
+
+size_t	ft_strlcpy(char *dst, const char *restrict src, size_t dsize)
+{
+	size_t	i;
+	size_t	l;
+
+	i = 0;
+	l = 0;
+	while (src[i])
 	{
-		c++;
-		str++;
+		l++;
+		i++;
 	}
-	return (c);
+	if (dsize == 0)
+		return (l);
+	i = 0;
+	while (i < dsize - 1 && i < l)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (l);
 }

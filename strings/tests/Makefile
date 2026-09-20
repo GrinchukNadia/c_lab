@@ -6,12 +6,24 @@ FILES = $(wildcard test_*.c)
 
 TESTS = $(FILES:.c=)
 
+ASAN_TESTS = $(TESTS:%=%_asan)
+
 %: %.c test.c ../$(NAME)
 	cc $(CFLAGS) -I ../include $<  test.c ../$(NAME) -o $@
+
+%_asan: %.c test.c ../$(NAME)
+	cc $(CFLAGS) -g -fsanitize=address -I ../include $< test.c ../$(NAME) -o $@
 
 ../$(NAME):
 	$(MAKE) -C ..
 
+asan:
+	$(MAKE) -C .. fclean
+	$(MAKE) -C .. all CFLAGS="$(CFLAGS) -g -fsanitize=address"
+	$(MAKE) clean
+	$(MAKE) re CFLAGS="$(CFLAGS) -g -fsanitize=address"
+	for t in $(TESTS); do ./$$t > /dev/null; done
+	
 help:
 	@echo "Available targets:"
 	@echo " re"
@@ -21,13 +33,13 @@ help:
 
 re: $(TESTS)
 
-test: test_build
+test: re
 	for t in $(TESTS); do ./$$t; done
 
 clean:
-	rm -f $(TESTS)
+	rm -f $(TESTS) $(ASAN_TESTS)
 
-valgrind: test_build
-	for t in $(TESTS); do valgrind --leak-check=full ./$$t; done
+valgrind: re
+	for t in $(TESTS); do valgrind --leak-check=full --show-leak-kinds=all ./$$t > /dev/null; done
 
 .PHONY: help re test clean valgrind
