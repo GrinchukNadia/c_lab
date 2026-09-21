@@ -30,6 +30,7 @@ help:
 	@echo " test"
 	@echo " clean"
 	@echo " valgrind"
+	@echo " asan"
 
 re: $(TESTS)
 
