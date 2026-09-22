@@ -9,7 +9,12 @@
 /*   Updated: 2026/09/20 14:06:37 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Copies src to dst within the size limit of dstsize.
+ * Copies only as much of src as fits in dst.
+ * Adds '\0' if dstsize is greater than 0.
+ * Returns the full length of src.
+ */
 #include <stddef.h>
 #include "strings.h"
 

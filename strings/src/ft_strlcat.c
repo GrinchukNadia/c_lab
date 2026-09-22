@@ -9,7 +9,12 @@
 /*   Updated: 2026/09/21 09:05:41 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Appends src to the end of dst,
+ * Appends src within the size limit of dstsize.
+ * Returns the length of the string it tried to create.
+ * Appends only as much of src as fits in dst.
+ */
 #include <stddef.h>
 
 size_t	ft_strlcat(char *dst, const char *restrict src, size_t dsize)

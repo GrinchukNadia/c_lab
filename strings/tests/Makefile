@@ -43,4 +43,4 @@ clean:
 valgrind: re
 	for t in $(TESTS); do valgrind --leak-check=full --show-leak-kinds=all ./$$t > /dev/null; done
 
-.PHONY: help re test clean valgrind
+.PHONY: asan help re test clean valgrind
