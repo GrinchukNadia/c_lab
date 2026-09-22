@@ -17,6 +17,11 @@ ASAN_TESTS = $(TESTS:%=%_asan)
 ../$(NAME):
 	$(MAKE) -C ..
 
+t:
+	$(MAKE) -C .. fclean
+	$(MAKE) -C .. re
+	$(MAKE) re
+	./test_atoi
 asan:
 	$(MAKE) -C .. fclean
 	$(MAKE) -C .. all CFLAGS="$(CFLAGS) -g -fsanitize=address"
@@ -31,6 +36,7 @@ help:
 	@echo " clean"
 	@echo " valgrind"
 	@echo " asan"
+	@echo " t"
 
 re: $(TESTS)
 
@@ -43,4 +49,4 @@ clean:
 valgrind: re
 	for t in $(TESTS); do valgrind --leak-check=full --show-leak-kinds=all ./$$t > /dev/null; done
 
-.PHONY: asan help re test clean valgrind
+.PHONY: asan help re test clean valgrind t
