@@ -5,3 +5,4 @@ a.out
 test
 test_*
 !test_*.c
+.vscode
