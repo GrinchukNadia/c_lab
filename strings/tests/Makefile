@@ -21,7 +21,7 @@ t:
 	$(MAKE) -C .. fclean
 	$(MAKE) -C .. re
 	$(MAKE) re
-	./test_isalnum
+	./test_isascii
 asan:
 	$(MAKE) -C .. fclean
 	$(MAKE) -C .. all CFLAGS="$(CFLAGS) -g -fsanitize=address"
