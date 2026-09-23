@@ -70,17 +70,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (0);
 }
-
-/*
-return (res * n);
-if (s && (nptr[i] == '-' || nptr[i] == '+'))
-	return (0);
-if (res && !is_nbr(&nptr[i]))
-	return (res);
-if (is_br(&nptr[i], &s) && !res)
-	return (0);
-if (n == 1 && nptr[i] == '-')
-	n = -1;
-if (nptr[i] >= '0' && nptr[i] <= '9')
-i++;
-*/
