@@ -20,5 +20,6 @@ char    *ft_strnstr(const char *big, const char *little, size_t len);
 int     ft_atoi(const char *nptr);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isdigit(int c);
+int		ft_isalnum(int c);
 
 #endif
