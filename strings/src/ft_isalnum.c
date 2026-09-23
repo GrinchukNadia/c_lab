@@ -9,7 +9,9 @@
 /*   Updated: 2026/09/23 13:04:05 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Checks whether the character is alphanumeric.
+ */
 #include "strings.h"
 
 int	ft_isalnum(int c)

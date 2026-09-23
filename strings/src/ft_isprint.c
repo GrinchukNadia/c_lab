@@ -9,7 +9,9 @@
 /*   Updated: 2026/09/23 13:32:49 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Checks whether the character is printable.
+ */
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)

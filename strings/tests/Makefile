@@ -18,10 +18,10 @@ ASAN_TESTS = $(TESTS:%=%_asan)
 	$(MAKE) -C ..
 
 t:
-	$(MAKE) -C .. fclean
-	$(MAKE) -C .. re
+	$(MAKE) -C .. all
 	$(MAKE) re
 	./test_toupper
+	
 asan:
 	$(MAKE) -C .. fclean
 	$(MAKE) -C .. all CFLAGS="$(CFLAGS) -g -fsanitize=address"

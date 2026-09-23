@@ -9,7 +9,9 @@
 /*   Updated: 2026/09/23 13:49:54 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Converts an lowercase letter to uppercase.
+ */
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')

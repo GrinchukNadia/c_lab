@@ -9,7 +9,9 @@
 /*   Updated: 2026/09/23 12:33:51 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Checks whether the character is a decimal digit.
+ */
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

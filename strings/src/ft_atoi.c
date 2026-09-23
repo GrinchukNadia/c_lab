@@ -9,7 +9,12 @@
 /*   Updated: 2026/09/22 14:56:05 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * Converts the initial part of the string to an integer.
+ * Skips leading whitespace and handles one optional '+' or '-' sign.
+ * Stops converting at the first non-digit character.
+ * Returns the converted integer.
+ */
 int	is_ws(const char *c)
 {
 	if (*c == ' ')
