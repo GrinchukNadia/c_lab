@@ -7,7 +7,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int     ft_strlen(char *str);
+int     ft_strlen(const char *str);
 char    *ft_strdup(char *src);
 int     ft_strncmp(char *s1, char *s2, size_t n);
 char    *ft_strchr(char *str, int c);
@@ -25,5 +25,6 @@ int     ft_atoi(const char *nptr);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

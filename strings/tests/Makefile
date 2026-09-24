@@ -18,9 +18,9 @@ ASAN_TESTS = $(TESTS:%=%_asan)
 	$(MAKE) -C ..
 
 t:
-	$(MAKE) -C .. all
+	$(MAKE) -C .. re
 	$(MAKE) re
-	./test_toupper
+	./test_substr
 	
 asan:
 	$(MAKE) -C .. fclean

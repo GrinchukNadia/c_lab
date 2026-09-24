@@ -15,7 +15,7 @@
  * Stops converting at the first non-digit character.
  * Returns the converted integer.
  */
-int	is_ws(const char *c)
+static int	is_ws(const char *c)
 {
 	if (*c == ' ')
 		return (1);
@@ -24,7 +24,7 @@ int	is_ws(const char *c)
 	return (0);
 }
 
-int	is_s(const char *c, int *n, int *s)
+static int	is_s(const char *c, int *n, int *s)
 {
 	if (*c == '+')
 	{
@@ -41,7 +41,7 @@ int	is_s(const char *c, int *n, int *s)
 	return (0);
 }
 
-void	p_nmr(const char *n, int *res)
+static void	p_nmr(const char *n, int *res)
 {
 	while (*n >= '0' && *n <= '9')
 	{
