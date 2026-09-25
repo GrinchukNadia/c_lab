@@ -14,39 +14,36 @@
 #include <stddef.h>
 #include "strings.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static size_t	substr_len(size_t sz_s, unsigned int start, size_t len)
 {
-	size_t	sz_s;
-	char	*res;
-	size_t	i;
-	size_t	y;
 	size_t	sz_c;
 
-	sz_s = ft_strlen(s);
-	i = 0;
-	y = 0;
-	sz_c = 0;
-	if (len == 0 || sz_s < start)
-	{
-		res = malloc(1);
-		if (!res)
-			return (NULL);
-		res[0] = '\0';
-		return (res);
-	}
+	if (start >= sz_s)
+		return (0);
 	if (sz_s - start < len)
 		sz_c = sz_s - start;
 	else
 		sz_c = len;
+	return (sz_c);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	i;
+	size_t	sz_s;
+	size_t	sz_c;
+	char	*res;
+
+	i = 0;
+	sz_s = ft_strlen(s);
+	sz_c = substr_len(sz_s, start, len);
 	res = malloc(sz_c + 1);
 	if (!res)
 		return (NULL);
-	y = start;
 	while (i < sz_c)
 	{
-		res[i] = s[y];
+		res[i] = s[start + i];
 		i++;
-		y++;
 	}
 	res[i] = '\0';
 	return (res);

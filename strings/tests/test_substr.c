@@ -1,6 +1,7 @@
 #include "strings.h"
 #include "test.h"
 #include <stdlib.h>
+#include <limits.h>
 
 int	main(void)
 {
