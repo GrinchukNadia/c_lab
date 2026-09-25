@@ -20,7 +20,7 @@ ASAN_TESTS = $(TESTS:%=%_asan)
 t:
 	$(MAKE) -C .. re
 	$(MAKE) re
-	./test_substr
+	./test_strjoin
 	
 asan:
 	$(MAKE) -C .. fclean
@@ -46,6 +46,9 @@ test: re
 clean:
 	rm -f $(TESTS) $(ASAN_TESTS)
 
+val_t: re
+	valgrind --leak-check=full --show-leak-kinds=all ./test_strjoin
+	
 valgrind: re
 	for t in $(TESTS); do valgrind --leak-check=full --show-leak-kinds=all ./$$t > /dev/null; done
 

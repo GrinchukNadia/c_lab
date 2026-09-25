@@ -12,7 +12,9 @@
 /*
  * Returns the length of the string, excluding the terminating '\0'.
  */
-int	ft_strlen(const char *str)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *str)
 {
 	int	c;
 
