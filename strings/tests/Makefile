@@ -20,7 +20,7 @@ ASAN_TESTS = $(TESTS:%=%_asan)
 t:
 	$(MAKE) -C .. re
 	$(MAKE) re
-	./test_strjoin
+	./test_strtrim
 	
 asan:
 	$(MAKE) -C .. fclean
@@ -37,6 +37,7 @@ help:
 	@echo " valgrind"
 	@echo " asan"
 	@echo " t"
+	@echo " val_t"
 
 re: $(TESTS)
 
