@@ -20,7 +20,7 @@ ASAN_TESTS = $(TESTS:%=%_asan)
 t:
 	$(MAKE) -C .. re
 	$(MAKE) re
-	./test_strtrim
+	./test_split
 	
 asan:
 	$(MAKE) -C .. fclean
