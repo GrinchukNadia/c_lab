@@ -19,45 +19,14 @@ static	int	is_sep(char const *s, char c)
 	return (0);
 }
 
-static	int	word_length(char const *s, char c)
-{
-	int	ws;
-
-	ws = 0;
-	while (!is_sep(s, c))
-	{
-		ws++;
-		s++;
-	}
-	return (ws);
-}
-
-static	void	fill_w(char const *s, char *res, int wl)
-{
-	int	i;
-
-	i = 0;
-	while (i < wl)
-	{
-		*res = *s;
-		res++;
-		s++;
-		i++;
-	}
-	*res = '\0';
-}
-
-char	**ft_split(char const *s, char c)
+static	char	**create_arr(char const *s, char c)
 {
 	int		i;
 	int		w;
-	int		wl;
-	int		res_i;
 	char	**res;
 
 	i = 0;
 	w = 0;
-	res_i = 0;
 	while (s[i])
 	{
 		if (!is_sep(&s[i], c) && is_sep(&s[i + 1], c))
@@ -67,16 +36,65 @@ char	**ft_split(char const *s, char c)
 	res = malloc(sizeof (char *) * (w + 1));
 	if (!res)
 		return (NULL);
+	return (res);
+}
+
+static	char	*create_word(char const *s, char c, int *wl)
+{
+	int		i;
+	char	*res;
+
+	*wl = 0;
 	i = 0;
+	while (!is_sep(&s[i], c))
+	{
+		(*wl)++;
+		i++;
+	}
+	res = malloc(*wl + 1);
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (i < *wl)
+	{
+		res[i] = *s;
+		s++;
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
+}
+
+static char	**handle_err(char **res, int res_i)
+{
+	while (res_i >= 0)
+	{
+		free (res[res_i]);
+		res_i--;
+	}
+	free (res);
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		wl;
+	int		res_i;
+	char	**res;
+
+	i = 0;
+	res_i = 0;
+	res = create_arr(s, c);
+	if (!res)
+		return (NULL);
 	while (s[i])
 	{
 		if (!is_sep(&s[i], c))
 		{
-			wl = word_length(&s[i], c);
-			res[res_i] = malloc(wl + 1);
-			if (! res[res_i])
-				return (NULL);
-			fill_w(&s[i], res[res_i], wl);
+			res[res_i] = create_word(&s[i], c, &wl);
+			if (!res[res_i])
+				return (handle_err(res, res_i - 1));
 			i += wl;
 			res_i++;
 		}

@@ -48,7 +48,7 @@ clean:
 	rm -f $(TESTS) $(ASAN_TESTS)
 
 val_t: re
-	valgrind --leak-check=full --show-leak-kinds=all ./test_strjoin
+	valgrind --leak-check=full --show-leak-kinds=all ./test_split
 	
 valgrind: re
 	for t in $(TESTS); do valgrind --leak-check=full --show-leak-kinds=all ./$$t > /dev/null; done
