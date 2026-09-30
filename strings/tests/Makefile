@@ -9,7 +9,7 @@ TESTS = $(FILES:.c=)
 ASAN_TESTS = $(TESTS:%=%_asan)
 
 %: %.c test.c ../$(NAME)
-	cc $(CFLAGS) -I ../include $<  test.c ../$(NAME) -o $@
+	cc $(CFLAGS) -g -I ../include $<  test.c ../$(NAME) -o $@
 
 %_asan: %.c test.c ../$(NAME)
 	cc $(CFLAGS) -g -fsanitize=address -I ../include $< test.c ../$(NAME) -o $@
@@ -20,7 +20,7 @@ ASAN_TESTS = $(TESTS:%=%_asan)
 t:
 	$(MAKE) -C .. re
 	$(MAKE) re
-	./test_split
+	./test_itoa
 	
 asan:
 	$(MAKE) -C .. fclean
@@ -48,7 +48,7 @@ clean:
 	rm -f $(TESTS) $(ASAN_TESTS)
 
 val_t: re
-	valgrind --leak-check=full --show-leak-kinds=all ./test_split
+	valgrind --leak-check=full --show-leak-kinds=all ./test_itoa
 	
 valgrind: re
 	for t in $(TESTS); do valgrind --leak-check=full --show-leak-kinds=all ./$$t > /dev/null; done
