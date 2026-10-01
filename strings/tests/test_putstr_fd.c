@@ -18,37 +18,45 @@ int main(void)
 	fd = open_tf();
 	if(fd != -1)
 	{
-		ft_putchar_fd('A', fd);
-		check_fd("output 1 char", fd, "A", 1);
+		ft_putstr_fd("hello", fd);
+		check_fd("normal str", fd, "hello", 5);
 		close(fd);
 	}
 
 	fd = open_tf();
 	if(fd != -1)
 	{
-		ft_putchar_fd('\n', fd);
-		check_fd("output \\n", fd, "\n", 1);
+		ft_putstr_fd("h", fd);
+		check_fd("one char", fd, "h", 1);
 		close(fd);
 	}
 
 	fd = open_tf();
 	if(fd != -1)
 	{
-		ft_putchar_fd(' ', fd);
-		check_fd("output space", fd, " ", 1);
+		ft_putstr_fd("", fd);
+		check_fd("empty str", fd, "", 0);
 		close(fd);
 	}
-
+	
 	fd = open_tf();
 	if(fd != -1)
 	{
-		ft_putchar_fd('\0', fd);
-		check_fd("output \\0", fd, "\0", 1);
+		ft_putstr_fd(" ", fd);
+		check_fd("space", fd, " ", 1);
 		close(fd);
 	}
-
+	
+	fd = open_tf();
+	if(fd != -1)
+	{
+		ft_putstr_fd("0", fd);
+		check_fd("zero as a str", fd, "0", 1);
+		close(fd);
+	}
 
 	test_res = test_result();
+
 	unlink("test_output.txt");
 	return (test_res);
 }
