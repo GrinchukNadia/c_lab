@@ -9,7 +9,7 @@
 /*   Updated: 2026/10/01 13:34:27 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Writes a string to the given file descriptor. */
 #include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)

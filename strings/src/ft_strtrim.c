@@ -9,7 +9,7 @@
 /*   Updated: 2026/09/26 15:50:30 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Trims char from the given set from the beginning and end of a string. */
 #include <stdlib.h>
 #include "strings.h"
 

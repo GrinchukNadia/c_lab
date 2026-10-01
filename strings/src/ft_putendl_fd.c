@@ -9,7 +9,7 @@
 /*   Updated: 2026/10/01 16:52:32 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Writes a string followed by a newline to the given file descriptor. */
 #include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)

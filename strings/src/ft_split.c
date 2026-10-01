@@ -9,7 +9,7 @@
 /*   Updated: 2026/09/27 10:14:58 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Splits a string into an array of strings using a delimiter character. */
 #include <stdlib.h>
 
 static	int	is_sep(char const *s, char c)

@@ -9,7 +9,7 @@
 /*   Updated: 2026/10/01 09:19:34 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Applies a function to each character and returns a newly allocated string. */
 #include <stdlib.h>
 #include "strings.h"
 

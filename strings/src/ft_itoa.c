@@ -9,7 +9,7 @@
 /*   Updated: 2026/09/29 11:00:55 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Converts an integer to a newly allocated string representation. */
 #include <stdlib.h>
 
 static	void	count_size(long nc, int *sz)

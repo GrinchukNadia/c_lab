@@ -9,7 +9,7 @@
 /*   Updated: 2026/09/24 10:29:52 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Returns a newly allocated substring from the given string. */
 #include <stdlib.h>
 #include <stddef.h>
 #include "strings.h"

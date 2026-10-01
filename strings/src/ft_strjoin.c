@@ -9,7 +9,7 @@
 /*   Updated: 2026/09/25 11:13:34 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Joins two strings into a newly allocated string. */
 #include <stdlib.h>
 #include "strings.h"
 

@@ -9,7 +9,7 @@
 /*   Updated: 2026/10/01 10:13:21 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* Applies a function to each character of a string, modifying it in place. */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
