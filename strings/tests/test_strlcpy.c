@@ -10,7 +10,7 @@ int main(void)
 
     size_t s = ft_strlcpy(dest, str, 3);
 
-    check("returns size of src", s == 5, 1);
+    check("returns size of src", s, 5);
     check_str("checks normal copy", dest, "he");
 
     char dest_1[6];
@@ -27,7 +27,7 @@ int main(void)
     char str_1[] = "";
     char dest_3[] = "world";
     s = ft_strlcpy(dest_3, str_1, sizeof(dest_3));
-    check("empty src returns 0", s == 0, 1);
+    check("empty src returns 0", s, 0);
     check_str("empty src", dest_3, "");
 
     char dest_4[] = "apple";

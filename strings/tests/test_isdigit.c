@@ -21,7 +21,7 @@ int main(void)
 			m++;
 		i++;
 	}
-	check("before 0", m == 0, 1);
+	check("before 0", m, 0);
 	i = ':';
 	m = 0;
 	while(i <= 127)
@@ -30,7 +30,7 @@ int main(void)
 			m++;
 		i++;
 	}
-	check("after 9", m == 0, 1);
+	check("after 9", m, 0);
 
 	return (test_result());
 }

@@ -7,7 +7,7 @@ int main(void)
     int c = 0;
     unsigned char data[] = {1, 2, 3, 4, 5, 6};
     ft_bzero(data, 0);
-    check("none changed", data[0] == 1, 1);
+    check("none changed", data[0], 1);
     ft_bzero(data, 4);
     while(i < 4)
     {
@@ -16,7 +16,7 @@ int main(void)
         i++;
     }
     check("all 0", c == 4, 1);
-    check("after n", data[4] == 5, 1);
-    check("last el", data[5] == 6, 1);
+    check("after n", data[4], 5);
+    check("last el", data[5], 6);
     return (test_result());
 }

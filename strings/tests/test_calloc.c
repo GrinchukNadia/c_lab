@@ -19,7 +19,7 @@ int main(void)
 		count++;
 	x++;
 	}
-	check("all int are 0", count == 0, 1);
+	check("all int are 0", count, 0);
 	i[0] = 5;
 	i[9] = 10;
 	check("first el int change", i[0], 5);

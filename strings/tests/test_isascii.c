@@ -12,7 +12,7 @@ int main(void)
 			m++;
 		i++;
 	}
-	check("is ascii, whole range", m == 0, 1);
+	check("is ascii, whole range", m, 0);
 	check("below ascii", ft_isascii(-1), 0);
 	check("above ascii", ft_isascii(128), 0);
 	check("negative", ft_isascii(-42), 0);

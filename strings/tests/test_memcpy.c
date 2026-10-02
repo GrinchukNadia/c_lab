@@ -31,6 +31,6 @@ int main(void)
             y++;
         i++;
     }
-    check("all elements are coppied", y == 0, 1);
+    check("all elements are coppied", y, 0);
     return (test_result());
 }
