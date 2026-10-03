@@ -8,7 +8,7 @@ int	main(void)
 	t_list	*nn;
 	t_list *nn1;
 
-	nn = ft_lstnew_bonus(str);
+	nn = ft_lstnew(str);
 	check("node with str allocated", nn != NULL, 1);
 	if (nn != NULL)
 	{
@@ -16,7 +16,7 @@ int	main(void)
 		check("new node, next null", nn->next == NULL, 1);
 	}
 
-	nn1 = ft_lstnew_bonus(NULL);
+	nn1 = ft_lstnew(NULL);
 	check("node with null allocated", nn1 != NULL, 1);
 	if (nn1 != NULL)
 	{

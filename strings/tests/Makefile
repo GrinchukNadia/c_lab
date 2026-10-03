@@ -26,7 +26,7 @@ t_bonus:
 	$(MAKE) -C ../src re
 	$(MAKE) -C ../src bonus
 	$(MAKE) $(ALL_TESTS)
-	./test_lstnew_bonus
+	./test_lstadd_front_bonus
 	
 asan:
 	$(MAKE) -C ../src fclean
@@ -65,13 +65,11 @@ test:
 	for t in $(TESTS); do ./$$t; done
 
 bonus: 
-	$(MAKE) -C ../src re
 	$(MAKE) -C ../src bonus
 	$(MAKE) $(BONUS_TESTS)
 	for t in $(BONUS_TESTS); do ./$$t; done
 
 test_all:
-	$(MAKE) -C ../src re
 	$(MAKE) -C ../src bonus
 	$(MAKE) $(ALL_TESTS)
 	for t in $(ALL_TESTS); do ./$$t; done

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngrinchu <ngrinchu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/02 10:27:46 by ngrinchu          #+#    #+#             */
-/*   Updated: 2026/10/02 10:27:48 by ngrinchu         ###   ########.fr       */
+/*   Created: 2026/10/03 12:26:16 by ngrinchu          #+#    #+#             */
+/*   Updated: 2026/10/03 12:26:19 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "strings.h"
-
-t_list *ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **list, t_list *new)
 {
-	t_list	*new;
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	new->next = *list;
+	*list = new;
 }
