@@ -26,7 +26,7 @@ t_bonus:
 	$(MAKE) -C ../src re
 	$(MAKE) -C ../src bonus
 	$(MAKE) $(ALL_TESTS)
-	./test_lstadd_front_bonus
+	./test_lstsize_bonus
 	
 asan:
 	$(MAKE) -C ../src fclean

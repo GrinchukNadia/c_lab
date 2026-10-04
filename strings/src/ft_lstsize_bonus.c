@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngrinchu <ngrinchu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/02 10:27:46 by ngrinchu          #+#    #+#             */
-/*   Updated: 2026/10/02 10:27:48 by ngrinchu         ###   ########.fr       */
+/*   Created: 2026/10/04 13:36:07 by ngrinchu          #+#    #+#             */
+/*   Updated: 2026/10/04 13:36:10 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "strings.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*new;
+	int	sz;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	sz = 0;
+	while (lst)
+	{
+		sz++;
+		lst = lst->next;
+	}
+	return (sz);
 }
