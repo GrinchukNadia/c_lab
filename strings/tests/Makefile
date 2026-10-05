@@ -2,10 +2,17 @@ NAME = libstrings.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-FILES = $(filter-out %_bonus.c, $(wildcard test_*.c))
+FILES = test_isalpha.c test_isdigit.c test_isalnum.c test_isascii.c test_isprint.c \
+	test_strlen.c test_memset.c test_bzero.c test_memcpy.c test_memmove.c \
+	test_strlcpy.c test_strlcat.c test_toupper.c test_tolower.c test_strchr.c \
+	test_strrchr.c test_strncmp.c test_memchr.c test_memcmp.c test_strnstr.c \
+	test_atoi.c test_calloc.c test_strdup.c test_substr.c test_strjoin.c \
+	test_strtrim.c test_split.c test_itoa.c test_strmapi.c test_striteri.c \
+	test_putchar_fd.c test_putstr_fd.c test_putendl_fd.c test_putnbr_fd.c
 TESTS = $(FILES:.c=)
 
-BONUS = $(wildcard test_*_bonus.c)
+BONUS = test_lstnew.c test_lstadd_front.c test_lstsize.c test_lstlast.c \
+	test_lstadd_back.c
 BONUS_TESTS = $(BONUS:.c=)
 
 ALL = $(wildcard test_*.c)
@@ -26,7 +33,7 @@ t_bonus:
 	$(MAKE) -C ../src re
 	$(MAKE) -C ../src bonus
 	$(MAKE) $(ALL_TESTS)
-	./test_lstlast_bonus
+	./test_lstadd_back
 	
 asan:
 	$(MAKE) -C ../src fclean
