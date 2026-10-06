@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 
 int	main(void)
 {
+	func_name("ft_strjoin");
 	char *w1;
 	char *w2;
 	char *w3;

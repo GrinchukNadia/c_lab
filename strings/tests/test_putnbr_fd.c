@@ -1,4 +1,4 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <fcntl.h>
 #include <unistd.h>
@@ -13,6 +13,7 @@ static int open_tf(void)
 
 int main(void)
 {
+	func_name("ft_putnbr_fd");
 	int test_res;
 	int fd;
 

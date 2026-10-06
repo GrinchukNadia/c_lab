@@ -1,4 +1,4 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 static	void hide(unsigned int i, char *c)
@@ -15,6 +15,7 @@ static	void move(unsigned int i, char *c)
 
 int main(void)
 {
+	func_name("ft_striteri");
 	char str0[] = "HelloWorld";
 	ft_striteri(str0, hide);
 	check_str("normal string", str0, "Hello*****");

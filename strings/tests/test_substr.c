@@ -1,10 +1,11 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 #include <limits.h>
 
 int	main(void)
 {
+	func_name("ft_substr");
 	char str[] = "Hello world";
 	char str_1[] = "";
 	char *res;

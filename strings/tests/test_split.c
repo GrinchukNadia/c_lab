@@ -1,4 +1,4 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 
@@ -15,6 +15,7 @@ static void free_res(char **res)
 
 int main(void)
 {
+	func_name("ft_split");
 	char **res0;
 	res0 = ft_split("Hello world", ' ');
 	check_str("normal split 1st", res0[0], "Hello");

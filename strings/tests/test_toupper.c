@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+	func_name("ft_toupper");
 	check("a to A", ft_toupper('a'), 'A');
 	check("z to Z", ft_toupper('z'), 'Z');
 	check("before a", ft_toupper('`'), '`');

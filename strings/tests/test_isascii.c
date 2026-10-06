@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+	func_name("ft_isascii");
 	int i = 0;
 	int m = 0;
 

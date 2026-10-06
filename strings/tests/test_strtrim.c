@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 
 int	main(void)
 {
+	func_name("ft_strtrim");
 	char *str1;
 	str1 = ft_strtrim("abcHelloabc", "abc");
 	check_str("normal trim", str1, "Hello");

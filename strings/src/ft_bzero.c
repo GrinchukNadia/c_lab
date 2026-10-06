@@ -12,7 +12,7 @@
 /*
  * Sets the first n bytes of memory to zero.
  */
-#include "strings.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

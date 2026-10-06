@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+	func_name("ft_memset");
     unsigned char data_5[5];
     unsigned char data_6[] = {1, 2, 3, 4, 5, 6};
     unsigned char data[] = {1, 2, 3, 4};

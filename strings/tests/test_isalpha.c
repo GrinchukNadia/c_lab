@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int	main(void)
 {
+	func_name("ft_isalpha");
 	check("lowercase a", ft_isalpha('a'), 1);
 	check("lowercase e", ft_isalpha('e'), 1);
 	check("lowercase z", ft_isalpha('z'), 1);

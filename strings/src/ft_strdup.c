@@ -13,7 +13,7 @@
  * Creates a new allocated copy of the string.
  * The returned string must be freed by the caller.
  */
-#include "strings.h"
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strdup(const char *src)

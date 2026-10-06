@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 
 int	main(void)
 {
+	func_name("ft_lstnew");
 	char 	*str = "hello";
 	t_list	*nn;
 	t_list *nn1;

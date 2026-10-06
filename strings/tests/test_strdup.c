@@ -1,9 +1,10 @@
 #include "test.h"
-#include "strings.h"
+#include "libft.h"
 #include <stdlib.h>
 
 int main(void)
 {
+	func_name("ft_strdup");
     char str[] = "Hello";
     char *copy = ft_strdup(str);
     char str_empty[] = "";

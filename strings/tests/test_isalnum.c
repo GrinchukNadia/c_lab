@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+	func_name("ft_isalnum");
 	check("lowercase a", ft_isalnum('a') != 0, 1);
 	check("lowercase e", ft_isalnum('e') != 0, 1);
 	check("lowercase z", ft_isalnum('z') != 0, 1);

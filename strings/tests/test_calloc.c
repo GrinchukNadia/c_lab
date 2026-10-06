@@ -1,10 +1,11 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdint.h>
 #include <stdlib.h>
 
 int main(void)
 {
+	func_name("ft_calloc");
 	int count = 0;
 	int x = 0;
 

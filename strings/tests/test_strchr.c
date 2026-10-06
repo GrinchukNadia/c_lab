@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stddef.h>
 
 int main(void)
 {
+	func_name("ft_strchr");
     char str[] = "Hello";
     char empty[] = "";
     check("letter in str", ft_strchr(str, 'l') == str + 2, 1);

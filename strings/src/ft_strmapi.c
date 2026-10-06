@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 /* Applies a function to each character and returns a newly allocated string. */
 #include <stdlib.h>
-#include "strings.h"
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

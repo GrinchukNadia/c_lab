@@ -8,12 +8,18 @@ static int  total = 0;
 static int  failed = 0;
 static int  initialized = 0;
 
+void func_name(char *n)
+{
+    printf("\n\n%s", n);
+}
+
 int test_result(void)
 {
     if(failed > 0)
         return (1);
     return (0);
 }
+
 static void    print_summary(void)
 {
     printf("\nTests: %d | Passed: %d | Failed: %d", total, total - failed, failed);

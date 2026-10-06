@@ -10,19 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
+#include "libft.h"
 #include <stdio.h>
 
 void	ft_lstadd_back(t_list **list, t_list *new)
 {
 	t_list	*copy;
-	copy = *list;
-	if(!copy)
-		copy = new;
-	while(copy->next)
+
+	if (!list)
+		return ;
+	if (!*list)
+		*list = new;
+	else
 	{
-		copy = copy->next;
-		printf("%s, hh", (char *)new->content);
+		copy = *list;
+		while (copy->next)
+		{
+			copy = copy->next;
+		}
+		copy->next = new;
 	}
-	copy->next = new;
 }

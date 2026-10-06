@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+    func_name("ft_bzero");
     int i = 0;
     int c = 0;
     unsigned char data[] = {1, 2, 3, 4, 5, 6};

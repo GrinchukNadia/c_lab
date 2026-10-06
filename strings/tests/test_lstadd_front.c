@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 
 int	main(void)
 {
+	func_name("ft_lstadd_front");
 	t_list *head;
 	t_list *new;
 	t_list *copy;

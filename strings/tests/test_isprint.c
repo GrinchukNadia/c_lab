@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+	func_name("ft_isprint");
 	int i = 32;
 	int m = 0;
 	while (i < 127)

@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <limits.h>
 
 int	main(void)
 {
+	func_name("ft_atoi");
 	check("positive nmbr", ft_atoi("42"), 42);
 	check("negative nmbr", ft_atoi("-42"), -42);
 	check("zero", ft_atoi("0"), 0);

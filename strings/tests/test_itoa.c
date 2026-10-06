@@ -1,4 +1,4 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <limits.h>
 #include <stdlib.h>
@@ -6,6 +6,7 @@
 
 int	main(void)
 {
+	func_name("ft_itoa");
 	char *res0;
 	res0 = ft_itoa(109);
 	check_str("positive nbr", res0, "109");

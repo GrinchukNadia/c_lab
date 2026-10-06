@@ -12,7 +12,7 @@
 /* Returns a newly allocated substring from the given string. */
 #include <stdlib.h>
 #include <stddef.h>
-#include "strings.h"
+#include "libft.h"
 
 static size_t	substr_len(size_t sz_s, unsigned int start, size_t len)
 {

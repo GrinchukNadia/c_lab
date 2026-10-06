@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+	func_name("ft_memcpy");
     unsigned char data_1[] = {1, 2, 3, 4, 5, 6, 7, 8};
     unsigned char data_2[4];
     unsigned char data_3[] = {0, 0, 0, 0, 0, 0};

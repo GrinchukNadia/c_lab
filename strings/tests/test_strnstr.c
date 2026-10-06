@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+	func_name("ft_strnstr");
     char big[] = "Hello world, hello you";
     char little[] = "world";
     char *p;

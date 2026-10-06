@@ -1,8 +1,9 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 int main(void)
 {
+	func_name("ft_strlcat");
     char src[] = " world";
     char dest[10] = "Hi";
     size_t r;

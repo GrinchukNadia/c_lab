@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 
 int main(void)
 {
+	func_name("ft_lstadd_back");
 	t_list	*head;
 	t_list	*new;
 	t_list	*copy;
@@ -44,6 +45,11 @@ int main(void)
 	check("4 el linked list, last", h->next->next->next == n3, 1);
 	check("4 el linked list, null after last", n3->next == NULL, 1);
 
+    t_list  *f_str;
+    f_str = ft_lstnew("not");
+    ft_lstadd_back(NULL, f_str);
+    check("linked list is null, program doesn't crash", 1, 1);
+
 	free(new);
 	free(head);
 	free(new_null);
@@ -51,5 +57,6 @@ int main(void)
 	free(n2);
 	free(n1);
 	free(h);
+    free(f_str);
 	return (test_result());
 }

@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 
 int main(void)
 {
+	func_name("ft_memcmp");
     unsigned char data_0[] = {10, 20, 0, 30, 40};
     unsigned char data_1[] = {10, 20, 0, 30, 40};
     unsigned char data_2[] = {10, 20, 0, 40, 40};

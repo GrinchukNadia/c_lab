@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stddef.h>
 
 int main(void)
 {
+	func_name("ft_memchr");
     unsigned char data[] = {10, 20, 0, 30, 40};
     unsigned char str[] = "hello world";
     unsigned char u_data[] = {10, 200, 0, 40, 50};

@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stddef.h>
 
 int main(void)
 {
+	func_name("ft_strrchr");
     char str[] = "Help";
     char al_l[] = "lllll";
     char empty[] = "";

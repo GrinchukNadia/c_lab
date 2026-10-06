@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 
 
 int main(void)
 {
+	func_name("ft_strncmp");
     char s1[] = {(char)0201, '\0'};
     check("equal", ft_strncmp("hello", "hello", 5), 0);
     check("less", ft_strncmp("abc", "abd", 3) < 0, 1);

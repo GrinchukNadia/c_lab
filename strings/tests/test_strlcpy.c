@@ -1,10 +1,11 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stddef.h>
 #include <stdio.h>
 
 int main(void)
 {
+	func_name("ft_strlcpy");
     char str[] = "hello";
     char dest[] = "world";
 

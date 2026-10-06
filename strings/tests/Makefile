@@ -1,4 +1,4 @@
-NAME = libstrings.a
+NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -11,8 +11,9 @@ FILES = test_isalpha.c test_isdigit.c test_isalnum.c test_isascii.c test_isprint
 	test_putchar_fd.c test_putstr_fd.c test_putendl_fd.c test_putnbr_fd.c
 TESTS = $(FILES:.c=)
 
+
 BONUS = test_lstnew.c test_lstadd_front.c test_lstsize.c test_lstlast.c \
-	test_lstadd_back.c
+	test_lstadd_back.c test_lstdelone.c test_lstclear.c
 BONUS_TESTS = $(BONUS:.c=)
 
 ALL = $(wildcard test_*.c)
@@ -27,13 +28,13 @@ ALL_TESTS = $(ALL:.c=)
 t:
 	$(MAKE) -C ../src re
 	$(MAKE) $(TESTS)
-	./test_toupper
+	./test_atoi
 
 t_bonus:
 	$(MAKE) -C ../src re
 	$(MAKE) -C ../src bonus
 	$(MAKE) $(ALL_TESTS)
-	./test_lstadd_back
+	./test_lstdelone
 	
 asan:
 	$(MAKE) -C ../src fclean
@@ -77,6 +78,7 @@ bonus:
 	for t in $(BONUS_TESTS); do ./$$t; done
 
 test_all:
+	$(MAKE) -C ../src re
 	$(MAKE) -C ../src bonus
 	$(MAKE) $(ALL_TESTS)
 	for t in $(ALL_TESTS); do ./$$t; done

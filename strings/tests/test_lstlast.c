@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 
 int	main(void)
 {
+	func_name("ft_lstlast");
 	t_list	*n0 = NULL;
 	t_list	*n1;
 	t_list	*n2;

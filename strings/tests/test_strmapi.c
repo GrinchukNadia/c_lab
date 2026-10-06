@@ -1,4 +1,4 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdlib.h>
 
@@ -17,6 +17,7 @@ static	char move(unsigned int i, char c)
 
 int main(void)
 {
+	func_name("ft_strmapi");
 	char *res0;
 	res0 = ft_strmapi("HelloWorld", hide);
 	check_str("normal string", res0, "Hello*****");

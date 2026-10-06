@@ -1,22 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngrinchu <ngrinchu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 13:04:03 by ngrinchu          #+#    #+#             */
-/*   Updated: 2026/09/23 13:04:05 by ngrinchu         ###   ########.fr       */
+/*   Created: 2026/10/06 13:39:31 by ngrinchu          #+#    #+#             */
+/*   Updated: 2026/10/06 13:39:33 by ngrinchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
- * Checks whether the character is alphanumeric.
- */
-#include "libft.h"
 
-int	ft_isalnum(int c)
-{
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
-}
+

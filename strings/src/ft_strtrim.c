@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 /* Trims char from the given set from the beginning and end of a string. */
 #include <stdlib.h>
-#include "strings.h"
+#include "libft.h"
 
 static	int	is_set(const char *s, char const *set)
 {

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 /* Joins two strings into a newly allocated string. */
 #include <stdlib.h>
-#include "strings.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -1,9 +1,10 @@
-#include "strings.h"
+#include "libft.h"
 #include "test.h"
 #include <stdio.h>
 
 int main(void)
 {
+	func_name("ft_strlen");
     check("\"Hello\"", ft_strlen("Hello"), 5);
     check("spaces + h", ft_strlen("   h"), 4);
     check("empty \"\"", ft_strlen(""), 0);
