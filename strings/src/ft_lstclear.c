@@ -10,4 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <stdlib.h>
 
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*copy;
+
+	if (!lst || !*lst)
+	return ;
+
+	copy = *lst;
+	while(copy)
+	{
+		copy = *lst;
+		del((*lst)->content);
+		free((*lst));
+		*lst = copy->next;
+		copy = copy->next;
+	}
+	lst = NULL;
+}

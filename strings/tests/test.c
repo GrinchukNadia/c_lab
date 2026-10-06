@@ -51,6 +51,11 @@ void    check(char *name, int actual, int expected)
 
 void    check_str(char *name, char *actual, char *expected)
 {
+    char    *copy_ac;
+    char    *copy_ex;
+
+    copy_ac = actual;
+    copy_ex = expected;
     init_tests();
     if (!actual || !expected)
     {
@@ -63,7 +68,7 @@ void    check_str(char *name, char *actual, char *expected)
     {
         if (*actual != *expected)
         {
-            printf("\033[31m[FAIL]\033[0m %s: expected %c, got %c\n", name, *expected, *actual);
+            printf("\033[31m[FAIL]\033[0m %s: expected %s, got %s\n", name, copy_ex, copy_ac);
             failed++;
             total++;
             return;
