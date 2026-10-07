@@ -19,8 +19,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	if (!lst || !*lst)
 		return ;
-
-	while((*lst))
+	while ((*lst))
 	{
 		copy = (*lst)->next;
 		del((*lst)->content);

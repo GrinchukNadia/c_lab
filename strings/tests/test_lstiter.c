@@ -2,7 +2,7 @@
 #include "test.h"
 #include <stdlib.h>
 
-void give_answer(void *c)
+void capitalize(void *c)
 {
     char    *str;
     str = (char *) c;
@@ -27,7 +27,7 @@ int main(void)
 
     ft_lstadd_back(&head, next);
     ft_lstadd_back(&head, next1);
-    ft_lstiter(head, &give_answer);
+    ft_lstiter(head, &capitalize);
 
     check_str("3 el linked list, 1", head->content, "Head");
     check_str("3 el linked list, 2", next->content, "Next");
@@ -37,10 +37,10 @@ int main(void)
     char    str3[] = "one";
 
     one = ft_lstnew(str3);
-    ft_lstiter(one, &give_answer);
+    ft_lstiter(one, &capitalize);
     check_str("only 1 el in linked list", one->content, "One");
 
-    ft_lstiter(NULL, &give_answer);
+    ft_lstiter(NULL, &capitalize);
     check("function called with null linked list, doesn't crash", 1, 1);
 
     free(head);
