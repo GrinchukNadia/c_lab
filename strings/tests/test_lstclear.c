@@ -1,5 +1,6 @@
 #include "libft.h"
 #include "test.h"
+#include <stdlib.h>
 
 static int used = 0;
 static void del(void *c)
@@ -36,7 +37,7 @@ int main(void)
 
     ft_lstadd_back(&head0, n_next);
     ft_lstadd_back(&head0, n_next1);
-    ft_lstclear(&head->next, &del);
+    ft_lstclear(&head0->next, &del);
     check("second el deleted, head untached", head0 == copy, 1);
     check("second el deleted, next null", head0->next == NULL, 1);
 
@@ -47,6 +48,8 @@ int main(void)
     t_list *null_head = NULL;
     ft_lstclear(&null_head, &del);
     check("*lst is null, doesn't crash", 1, 1);
+
+    free(head0);
 
     return(test_result());
 }

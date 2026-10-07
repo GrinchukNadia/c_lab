@@ -18,16 +18,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*copy;
 
 	if (!lst || !*lst)
-	return ;
+		return ;
 
-	copy = *lst;
-	while(copy)
+	while((*lst))
 	{
-		copy = *lst;
+		copy = (*lst)->next;
 		del((*lst)->content);
 		free((*lst));
-		*lst = copy->next;
-		copy = copy->next;
+		*lst = copy;
 	}
-	lst = NULL;
 }
