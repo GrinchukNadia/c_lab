@@ -13,7 +13,7 @@ TESTS = $(FILES:.c=)
 
 
 BONUS = test_lstnew.c test_lstadd_front.c test_lstsize.c test_lstlast.c \
-	test_lstadd_back.c test_lstdelone.c test_lstclear.c
+	test_lstadd_back.c test_lstdelone.c test_lstclear.c test_lstiter
 BONUS_TESTS = $(BONUS:.c=)
 
 ALL = $(wildcard test_*.c)
@@ -34,7 +34,7 @@ t_bonus:
 	$(MAKE) -C ../src re
 	$(MAKE) -C ../src bonus
 	$(MAKE) $(ALL_TESTS)
-	./test_lstclear
+	./test_lstiter
 	
 asan:
 	$(MAKE) -C ../src fclean
