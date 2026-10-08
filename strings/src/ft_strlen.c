@@ -16,7 +16,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	c;
+	size_t	c;
 
 	c = 0;
 	while (*str)
