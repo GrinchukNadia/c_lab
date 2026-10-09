@@ -22,13 +22,13 @@ char	*ft_strrchr(const char *str, int c)
 	l = NULL;
 	while (*str)
 	{
-		if (*str == c)
+		if (*str == (char)c)
 		{
 			l = (char *)str;
 		}
 		str++;
 	}
-	if (*str == c)
+	if (*str == (char)c)
 		return ((char *)str);
 	else if (l)
 		return (l);

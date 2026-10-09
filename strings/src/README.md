@@ -34,7 +34,7 @@ The following resources were used during the development of this project:
 - Manual pages (man) - to study function behavior, parameters, and return values.
 - [cppreference](https://cppreference.com/c) - to study function specifications and edge cases.
 - [SEI CERT C Coding Standard](https://cmu-sei.github.io/secure-coding-standards/sei-cert-c-coding-standard/) - to learn about memory management in C.
-- [GNU Make Manual](https://www.gnu.org/software/make/manual/) - to learn build rules, dependencies, and automatic variables.
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/html_node/index.html#SEC_Contents) - to learn build rules, dependencies, and automatic variables.
 
 AI Usage  
 AI tools were used to clarify C programming concepts encountered in technical articles, explore edge cases, and discuss and improve testing strategies.
