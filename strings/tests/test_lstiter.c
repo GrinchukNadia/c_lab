@@ -43,10 +43,17 @@ int main(void)
     ft_lstiter(NULL, &capitalize);
     check("function called with null linked list, doesn't crash", 1, 1);
 
+    t_list  *two;
+    char    str4[] = "two";
+    two = ft_lstnew(str4);
+    ft_lstiter(two, NULL);
+    check("function doesnt exist doesn't crash", 1, 1);
+
     free(head);
     free(next);
     free(next1);
     free(one);
+    free(two);
     return (test_result());
 
 }

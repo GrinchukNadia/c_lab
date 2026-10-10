@@ -17,7 +17,7 @@
  */
 #include <stddef.h>
 
-size_t	ft_strlcat(char *dst, const char *restrict src, size_t dsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	l;
@@ -29,12 +29,12 @@ size_t	ft_strlcat(char *dst, const char *restrict src, size_t dsize)
 	y = 0;
 	while (src[x])
 		x++;
-	while (dst[i] && i < dsize)
+	while (dst[i] && i < size)
 		i++;
 	l = x + i;
-	if (i == dsize || x == 0)
+	if (i == size || x == 0)
 		return (l);
-	while (i < dsize - 1 && src[y])
+	while (i < size - 1 && src[y])
 	{
 		dst[i] = src[y];
 		i++;

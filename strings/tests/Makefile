@@ -62,7 +62,7 @@ asan_bonus:
 	
 help:
 	@echo "Available targets:"
-	@echo " clean"
+	@echo " clean fclean"
 	@echo " t, t_bonus"
 	@echo " test, test_all, bonus"
 	@echo " valgrin, val_all, val_bonus"
@@ -87,6 +87,10 @@ test_all:
 clean:
 	rm -f $(ALL_TESTS)
 
+fclean:
+	$(MAKE) -C ../src fclean
+	$(MAKE) clean
+
 valgrind:
 	$(MAKE) -C ../src re
 	$(MAKE) $(TESTS)
@@ -104,6 +108,6 @@ val_all:
 	$(MAKE) $(ALL_TESTS)
 	for t in $(ALL_TESTS); do valgrind --leak-check=full --show-leak-kinds=all ./$$t > /dev/null; done
 	
-.PHONY: t t_bonus test bonus test_all clean \
+.PHONY: t t_bonus test bonus test_all clean fclean \
 	valgrind val_bonus val_all \
 	asan asan_bonus asan_all help

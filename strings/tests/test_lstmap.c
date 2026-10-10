@@ -63,9 +63,20 @@ int main(void)
     new1 = ft_lstmap(NULL, &capitalize, &del);
     check("function called with null linked list, doesn't crash", new1 == NULL, 1);
 
+    t_list  *two;
+    char    str4[] = "two";
+    two = ft_lstnew(str4);
+    ft_lstmap(two, NULL, &del);
+    check("first function doesn't exist, doesn't crash", 1, 1);
+    ft_lstmap(two, &capitalize, NULL);
+    check("second function doesn't exit, doesn't crash", 1, 1);
+    ft_lstmap(two, NULL, NULL);
+    check("both functions don't exist, doesn't crash", 1, 1);
+
     free(head);
     free(next);
     free(next1);
+    free(two);
     ft_lstclear(&new, &del);
     return (test_result());
 }

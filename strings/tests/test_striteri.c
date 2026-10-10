@@ -32,5 +32,9 @@ int main(void)
 	ft_striteri(str3, move);
 	check_str("move letters on n", str3, "bcd");
 
+	char str4[] = "failed func";
+	ft_striteri(str4, NULL);
+	check("func is NULL, doesn't crash", 1, 1);
+
 	return (test_result());
 }

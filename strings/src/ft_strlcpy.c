@@ -18,7 +18,7 @@
 #include <stddef.h>
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *restrict src, size_t dsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	l;
@@ -30,10 +30,10 @@ size_t	ft_strlcpy(char *dst, const char *restrict src, size_t dsize)
 		l++;
 		i++;
 	}
-	if (dsize == 0)
+	if (size == 0)
 		return (l);
 	i = 0;
-	while (i < dsize - 1 && i < l)
+	while (i < size - 1 && i < l)
 	{
 		dst[i] = src[i];
 		i++;

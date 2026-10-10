@@ -19,17 +19,17 @@
 #include <stdlib.h>
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t n, size_t size)
 {
 	void	*m;
 
-	if (size != 0 && SIZE_MAX / size < count)
+	if (size != 0 && SIZE_MAX / size < n)
 	{
 		return (NULL);
 	}
-	m = malloc(count * size);
+	m = malloc(n * size);
 	if (!m)
 		return (NULL);
-	m = ft_memset(m, 0, count * size);
+	m = ft_memset(m, 0, n * size);
 	return (m);
 }

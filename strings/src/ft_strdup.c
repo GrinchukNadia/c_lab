@@ -16,20 +16,20 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s)
 {
 	int		length;
 	char	*dup;
 	int		i;
 
 	i = 0;
-	length = ft_strlen(src);
+	length = ft_strlen(s);
 	dup = malloc(length + 1);
 	if (!dup)
 		return (NULL);
-	while (src[i])
+	while (s[i])
 	{
-		dup[i] = src[i];
+		dup[i] = s[i];
 		i++;
 	}
 	dup[i] = '\0';

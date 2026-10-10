@@ -34,6 +34,10 @@ int main(void)
 	res3 = ft_strmapi("abc", move);
 	check_str("move letters on n", res3, "bcd");
 
+	char *res4;
+	res4 = ft_strmapi("failed func", NULL);
+	check("func is NULL", res4 == NULL, 1);
+
 	free(res0);
 	free(res1);
 	free(res2);

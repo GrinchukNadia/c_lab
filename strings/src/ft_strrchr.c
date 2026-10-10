@@ -15,21 +15,21 @@
  */
 #include <stddef.h>
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*l;
 
 	l = NULL;
-	while (*str)
+	while (*s)
 	{
-		if (*str == (char)c)
+		if (*s == (char)c)
 		{
-			l = (char *)str;
+			l = (char *)s;
 		}
-		str++;
+		s++;
 	}
-	if (*str == (char)c)
-		return ((char *)str);
+	if (*s == (char)c)
+		return ((char *)s);
 	else if (l)
 		return (l);
 	return (NULL);
