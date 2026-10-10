@@ -25,8 +25,18 @@ int	main(void)
 	check("new is head of empty list", head_null == new_null, 1);
 	check("old head is null", new_null->next == NULL, 1);
 
+	t_list *head1;
+	head1 = ft_lstnew("head");
+	if (!head1)
+		return (1);
+	ft_lstadd_front(&head1, NULL);
+	check("NULL new doesnt change head", head1 != NULL && head1->next == NULL, 1);
+	ft_lstadd_front(NULL, head1);
+	check("NULL head, doesn't change node", head1->next == NULL, 1);
+
 	free(copy);
 	free(new);
 	free(new_null);
+	free(head1);
 	return (test_result());
 }
