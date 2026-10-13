@@ -33,17 +33,25 @@ asan:
 	$(MAKE) $(TESTS) CFLAGS="$(CFLAGS) -g -fsanitize=address"
 	for t in $(TESTS); do ./$$t > /dev/null; done
 
+sum:
+	$(MAKE) -C ../src re
+	$(MAKE) clean
+	$(MAKE) $(TESTS)
+	for t in $(TESTS); do ./$$t > /dev/null; done
+	@sh ./summary.sh
 	
 help:
 	@echo "Available targets:"
 	@echo " clean fclean"
-	@echo " t, t_bonus"
-	@echo " test, test_all, bonus"
-	@echo " valgrin, val_all, val_bonus"
-	@echo " asan, asan_all, asan_bonus"
+	@echo " t"
+	@echo " test"
+	@echo " valgrind"
+	@echo " asan"
+	@echo " sum"
 
 test: 
 	$(MAKE) -C ../src re
+	$(MAKE) clean
 	$(MAKE) $(TESTS)
 	for t in $(TESTS); do ./$$t; done
 
@@ -59,4 +67,4 @@ valgrind:
 	$(MAKE) $(TESTS)
 	for t in $(TESTS); do valgrind --leak-check=full --show-leak-kinds=all ./$$t > /dev/null; done
 	
-.PHONY: t test clean fclean valgrind asan help
+.PHONY: t test clean fclean valgrind asan help sum

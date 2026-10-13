@@ -1,4 +1,4 @@
-*This activity has been created as part of the 42 curriculum by* <ngrinchu> .
+*This activity has been created as part of the 42 curriculum by ngrinchu.*
 # Libft
 A reusable library of fundamental C functions and utilities.
 ## Description
