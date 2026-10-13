@@ -51,5 +51,6 @@ int main(void)
     r = ft_strlcat(dest_8, src, 3);
     check("size smaller than dst, return size", r, 9);
     check_str("size smaller than dst", dest_8, "Hello");
+
     return (test_result());
 }
