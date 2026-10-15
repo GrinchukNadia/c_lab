@@ -6,10 +6,10 @@ failed=0
 echo
 echo "=================SUMMARY================="
 
-for test in ./test_*; do
+for test in "$@"; do
     if [ -x "$test" ]; then
-        name=${test#./test_}
-        if "$test" > /dev/null 2>&1; then
+        name=${test#test_}
+        if "./$test" > /dev/null 2>&1; then
             printf "test_%-30s \033[32mPASS\033[0m\n" "$name"
             ((passed++))
         else

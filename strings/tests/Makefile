@@ -2,18 +2,13 @@ NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-FILES = test_isalpha.c test_isdigit.c test_isalnum.c test_isascii.c test_isprint.c \
-	test_strlen.c test_memset.c test_bzero.c test_memcpy.c test_memmove.c \
-	test_strlcpy.c test_strlcat.c test_toupper.c test_tolower.c test_strchr.c \
-	test_strrchr.c test_strncmp.c test_memchr.c test_memcmp.c test_strnstr.c \
-	test_atoi.c test_calloc.c test_strdup.c test_substr.c test_strjoin.c \
-	test_strtrim.c test_split.c test_itoa.c test_strmapi.c test_striteri.c \
-	test_putchar_fd.c test_putstr_fd.c test_putendl_fd.c test_putnbr_fd.c \
-	test_lstnew.c test_lstadd_front.c test_lstsize.c test_lstlast.c \
-	test_lstadd_back.c test_lstdelone.c test_lstclear.c test_lstiter \
-	test_lstmap.c
+SOURCE_TESTS = $(patsubst ../src/ft_%.c,test_%.c,$(wildcard ../src/ft_*.c))
+
+FILES = $(filter $(SOURCE_TESTS),$(wildcard test_*.c))
 
 TESTS = $(FILES:.c=)
+
+ALL_TESTS = $(patsubst %.c,%,$(wildcard test_*.c))
 
 %: %.c test.c ../src/$(NAME)
 	cc $(CFLAGS) -g -I ../src $<  test.c ../src/$(NAME) -o $@
@@ -38,7 +33,7 @@ sum:
 	$(MAKE) clean
 	$(MAKE) $(TESTS)
 	for t in $(TESTS); do ./$$t > /dev/null; done
-	@sh ./summary.sh
+	@bash ./summary.sh $(TESTS)
 	
 help:
 	@echo "Available targets:"
@@ -52,11 +47,19 @@ help:
 test: 
 	$(MAKE) -C ../src re
 	$(MAKE) clean
-	$(MAKE) $(TESTS)
-	for t in $(TESTS); do ./$$t; done
+	@if [ -z "$(strip $(TESTS))" ]; then \
+	 echo "No matching tests found"; \
+	else \
+	 $(MAKE) $(TESTS) || exit $$?; \
+	 status=0; \
+	 for t in $(TESTS); do \
+	  ./$$t || status=1; \
+	 done; \
+	 exit $$status; \
+	fi
 
 clean:
-	rm -f $(TESTS)
+	rm -f $(ALL_TESTS)
 
 fclean:
 	$(MAKE) -C ../src fclean
